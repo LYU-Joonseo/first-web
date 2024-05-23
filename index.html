@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 3강 메타태그 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="pin.jpg" rel="shortcut icon" type="image/x-icon">
+    <title>PIN 로그인</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .standard {
+            width: 500px;
+            height: 600px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1500px);
+        }
+        .door {
+            width: 500px;
+            height: 600px;
+            border: 1px solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: pink;
+            transform-style: preserve-3d;
+            transform-origin: right;
+            transition: all 2s;
+        }
+        .door::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .standard:hover .door{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="loading.html">
+        <div class="standard">
+            <p>PIN 번호</p>
+            <input id="pwd" type="password" maxlength="4" required> <!-- 5강 비밀번호 입력양식 응용 -->
+            <input type="submit" value="로그인"></a> <!-- 4강 하이퍼 링크 응용 -->
+            <div class="door"></div>
+        </div>
+    </form>
+</body>
+</html>
+<!-- 1강 html기본 구조 -->
